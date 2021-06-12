@@ -1,5 +1,7 @@
 # Informações do Projeto
 
+## *Para o funcionamento do projeto é necessário primeiro subir o ambiente **[KeyCloak Server e Redis](https://github.com/jeffersoncleyson/env_dev)** e em seguida realizar a configuração do KeyCloak seguindo os passos deste **[LINK](https://medium.com/devops-dudes/securing-spring-boot-rest-apis-with-keycloak-1d760b2004e)***
+
 #
 ## Introdução
 #
@@ -47,7 +49,7 @@ São oferecidas pelo Keycloak funcionalidades como:
 * i18n (internationalization);
 * Entre outras várias configurações e customizações mais avançadas.
 
-#### **Para utilizar o server do KeyCloak em conjunto com esta aplicação consultar o material disponível **[AQUI (Env-DEV)](https://github.com/jeffersoncleyson/env_dev)**** 
+#### **Para utilizar o server do KeyCloak em conjunto com esta aplicação consultar o material disponível **[AQUI (Env-DEV)](https://github.com/jeffersoncleyson/env_dev)****.
 
 #### **Material de apoio para consulta e entendimento:**
 

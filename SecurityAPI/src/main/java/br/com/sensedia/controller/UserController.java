@@ -8,6 +8,8 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +35,7 @@ public class UserController {
         return ResponseEntity.ok("Hello Anonymous");
     }
 
+    @SecurityRequirement(name = "security_auth")
     @Operation(summary = "Test User Access", tags = { "User" })
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Access authorized")
@@ -43,6 +46,7 @@ public class UserController {
         return ResponseEntity.ok("Hello User");
     }
 
+    @SecurityRequirement(name = "security_auth")
     @Operation(summary = "Test Admin Access", tags = { "User" })
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Access authorized")
@@ -53,6 +57,7 @@ public class UserController {
         return ResponseEntity.ok("Hello Admin");
     }
 
+    @SecurityRequirement(name = "security_auth")
     @Operation(summary = "Test Admin and User Access", tags = { "User" })
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Access authorized")

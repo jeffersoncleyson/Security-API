@@ -18,3 +18,13 @@ keycloak:
     secret: 88e12db1-94cb-4190-b1cd-ff3f1047310b
   use-resource-role-mappings: true
   bearer-only: true
+
+springdoc:
+  version: '@springdoc.version@'
+  swagger-ui:
+    oauth:
+      clientId: springboot-microservice
+      clientSecret: 82d8f250-0119-4a61-b033-6b8e7df78acd
+  oAuthFlow:
+    authorizationUrl: http://localhost:8080/auth/realms/Demo-Realm/protocol/openid-connect/auth
+    tokenUrl: http://localhost:8080/auth/realms/Demo-Realm/protocol/openid-connect/token
