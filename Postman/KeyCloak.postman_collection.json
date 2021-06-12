@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "f59d9c38-4d03-40f8-a346-9c542906eb7e",
+		"name": "KeyCloak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Token Endpoint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"accessToken\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.globals.set(\"access_token\", jsonData.access_token);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "springboot-microservice",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "88e12db1-94cb-4190-b1cd-ff3f1047310b",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "employee1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwe123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/Demo-Realm/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"Demo-Realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
